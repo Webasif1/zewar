@@ -1,0 +1,110 @@
+@mixin flexCol($gap: 1rem, $flex_direction: row) {
+  display: flex;
+  flex-direction: $flex_direction;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  margin: auto;
+
+  .header_container {
+    .header_element {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .header_search {
+        width: 80rem;
+        border: 1px solid var(--primary-color);
+        border-radius: 0.8rem;
+        padding: 0.5rem;
+        form {
+          display: flex;
+        }
+        input {
+          width: 100%;
+          outline: none;
+          border: none;
+          background: transparent;
+          font-size: 1.8rem;
+          padding: 1rem 2rem;
+        }
+        button {
+          border: none;
+          outline: none;
+          padding-inline: 2.5rem;
+          padding-block: 1rem;
+          background-color: var(--primary-color);
+          color: var(--bg);
+          cursor: pointer;
+          border-radius: 0.5rem;
+          font-size: 1.8rem;
+        }
+      }
+
+      .header_icons {
+        @include flexCol(2rem, row);
+        .cart_icon{
+          position: relative;
+            &::after {
+            content: "2";
+            background-color: var(--primary-color);
+            color: var(--bg);
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            border-radius: 5rem;
+            position: absolute;
+            bottom: 2rem;
+            left: 1.8rem
+          }
+          }
+        .hed_icon {
+          @include flexCol(0.5rem, row);
+          cursor: pointer;
+          i {
+            font-size: 2.8rem;
+
+          }
+          p {
+            font-size: 1.8rem;
+            font-weight: 400;
+          }
+        }
+        .account_icon{
+          position: relative;
+          .account_dropdown{
+            position: absolute;
+            top: 4rem;
+            right: 0px;
+            background-color: var(--bg);
+            box-shadow: 3px -3px 12px 4px #25000028;
+            width: 18rem;
+            height: 20rem;
+            @include flexCol(1rem, column);
+            align-items: flex-start;
+            padding-inline: 1rem;
+            li{
+              font-size: 1.8rem;
+              transition: all .3s ease-in-out;
+              width: 100%;
+              padding: .2rem .5rem;
+              &:hover{
+                background-color: #2500009f;
+                color: var(--bg);
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
