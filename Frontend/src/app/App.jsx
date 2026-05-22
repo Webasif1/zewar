@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './features/shared/header/Header'
+import Header from '../features/shared/header/Header'
 import 'remixicon/fonts/remixicon.css'
 
 const App = () => {
